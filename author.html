@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+
+<title>My Java script</title>
+<h2>Author entry Sai Vamshi Krishna Gajji</h2>
+
+<form>
+    
+    <label for="authorInput">The hidden author name: </label>
+    <input type ="password" id="authorInput" name="authorInput" value="Dickens" required> <br>
+    
+    <label for="guessInput">Guess the author: </label>
+    <input type ="text" id="guessInput" name="guessInput" required> <br>
+   
+    <input type="button" onclick="checkAuthor()" value="Check the guess">
+</form>
+
+
+<p id="result">Good: 0 | Oops: 0</p>
+
+<script> 
+var good = 0;
+var oops = 0;
+function  checkAuthor(){
+    const secretValue = document.getElementById("authorInput").value;
+    const userGuess = document.getElementById("guessInput").value;
+    if (userGuess === secretValue) {
+        good++;
+        alert("You got it right!");
+    } else {
+        oops++;
+        alert("Sorry");
+    }
+    const resultElement = document.getElementById("result");
+    resultElement.innerHTML = "Good: " + good + " | Oops: " + oops;
+}
+   
+</script>
+
+</body>
+</html> 
