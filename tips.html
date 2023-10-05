@@ -1,0 +1,52 @@
+!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>
+        My Tips
+    </title>
+
+    
+
+<div class="container py-3 row mx-auto col-sm-6 card card-header bg-light form-group">
+<h2 class="mb-0" >Sai Vamshi Krishna Gajji shows tip amounts</h2>
+<div class="col-lg-5">
+    <label class="col-lg-10 col-form-label form-control-label" for="baseAmount">Enter base amount</label>
+    <input type="number" id="baseAmount" value="50"><br>
+</div>
+<div class="col-lg-5">
+    <label class="col-lg-10 col-form-label form-control-label" for="tipPercent">Enter the tip percent</label>
+    <input type="number" id="tipPercent" value="15"><br>
+</div>
+</br>
+    <input class="btn btn-outline-secondary" type="button" value="Show tip" onclick="tips()">
+    
+</br>
+
+    
+<script> 
+
+function tips() {
+            // Get the base and tip percent values from the input elements
+            var baseAmount = parseFloat(document.getElementById("baseAmount").value);
+            var tipPercent = parseFloat(document.getElementById("tipPercent").value);
+
+            // Initialize the output string
+            var toShow = "";
+
+            // Calculate and append tip values for five levels
+            for (var i = 0; i < 5; i++) {
+                var calculatedTip = (baseAmount * (tipPercent + i * 4)) / 100;
+                toShow += (tipPercent + i * 4) + "tip% is calculated tip; " + calculatedTip + "; ";
+            }
+
+            // Update the innerHTML of the result element
+            document.getElementById("tipResults").innerHTML = "Tips are: " + toShow;
+        }
+
+  
+</script>
+
+</body>
+</html> 
+
