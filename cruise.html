@@ -45,7 +45,21 @@
 
 </form>
 
+<form>
+    <div class="col-lg-5">
+    <label class="col-lg-15 col-form-label form-control-label" for="days">Enter the number of days</label>
+    <input type="text" id="days" value="">
+</div>
+<div class="col-lg-5">
+    <label class="col-lg-6 col-form-label form-control-label" for="price">Enter price</label>
+    <input type="text" id="price" value="">
+</div>
+</br>
+    <input class="btn btn-outline-secondary" type="button" onclick="updateCruise()" value="Update the cruise">
 
+    
+</form>
+</br>
 
 <p id="cruiseResult"></p>
     </div>
@@ -71,6 +85,18 @@ var my_cruise = {};
             document.getElementById("cruiseResult").innerHTML = JSON.stringify(my_cruise);
         }
         
+        function updateCruise() {
+        // Get the values from the input elements
+        var daysValue = document.getElementById("days").value;
+        var priceValue = document.getElementById("price").value;
+
+        // Update the properties of my_cruise
+        my_cruise["days"] = daysValue;
+        my_cruise["price"] = priceValue;
+
+        // Display the updated my_cruise object
+        document.getElementById("cruiseResult").innerHTML = JSON.stringify(my_cruise);
+    }
 
 </script>
 
