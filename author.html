@@ -16,9 +16,14 @@
 </form>
 <p id="result">Good: 0 | Oops: 0</p>
 
+<div>
+    <img id="cityImage" src="agra.jpg" alt="City Image" width="100" height="100" onclick="selectImage()">
+</div>
+
 <script> 
 var good = 0;
 var oops = 0;
+var useImage = 1;
 function  checkAuthor(){
     const secretValue = document.getElementById("authorInput").value;
     const userGuess = document.getElementById("guessInput").value;
@@ -32,6 +37,29 @@ function  checkAuthor(){
     const resultElement = document.getElementById("result");
     resultElement.innerHTML = "Good: " + good + " | Oops: " + oops;
 }
+
+function selectImage() {
+            var imageElement = document.getElementById("cityImage");
+
+            // Use a switch statement to determine the next image
+            switch (useImage) 
+            {
+                case 1:
+                    imageElement.src = "goaa.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    imageElement.src = "srinagar.jpg";
+                    useImage = 3;
+                    break;
+                case 3:
+                    imageElement.src = "agra.jpg"; // Wrap back to the first image
+                    useImage = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
    
 </script>
 
