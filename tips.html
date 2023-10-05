@@ -1,12 +1,10 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
  
 <head>
     <title>
         My Tips
     </title>
-
-    
 
 <div class="container py-3 row mx-auto col-sm-6 card card-header bg-light form-group">
 <h2 class="mb-0" >Sai Vamshi Krishna Gajji shows tip amounts</h2>
@@ -23,10 +21,13 @@
     
 </br>
 
+    <p id="tipResults">Tips are:</p>
+
     
 <script> 
 
-function tips() {
+function tips() 
+{
             // Get the base and tip percent values from the input elements
             var baseAmount = parseFloat(document.getElementById("baseAmount").value);
             var tipPercent = parseFloat(document.getElementById("tipPercent").value);
@@ -35,18 +36,18 @@ function tips() {
             var toShow = "";
 
             // Calculate and append tip values for five levels
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 5; i++) 
+            {
                 var calculatedTip = (baseAmount * (tipPercent + i * 4)) / 100;
-                toShow += (tipPercent + i * 4) + "tip% is calculated tip; " + calculatedTip + "; ";
+                toShow += (tipPercent + i * 4) + "tip% is calculated tip: " + calculatedTip + "; ";
             }
 
             // Update the innerHTML of the result element
             document.getElementById("tipResults").innerHTML = "Tips are: " + toShow;
         }
 
-  
+
 </script>
 
 </body>
 </html> 
-
